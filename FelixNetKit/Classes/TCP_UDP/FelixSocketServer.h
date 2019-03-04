@@ -42,7 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param welcomeData 连接成功后默认返回给客户端的内容
  */
 - (void)startServerOnPort:(int)port welcomeData:(NSData * _Nullable)welcomeData;
-
+/**
+ 关闭socket服务器
+ */
+- (void)stopServer;
 /**
  发送数据给客户端
 

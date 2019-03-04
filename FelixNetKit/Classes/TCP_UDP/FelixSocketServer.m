@@ -36,6 +36,14 @@
         NSLog(@"start socket server success,listening port on:%d",port);
     }
 }
+- (void)stopServer{
+    if (_socket){
+        [_clients removeAllObjects];
+        [_socket disconnect];
+    }else{
+        NSLog(@"havn't start any server");
+    }
+}
 - (void)disconnectWithClient:(GCDAsyncSocket *)client{
     if (client.connectedHost == nil){
         return;
